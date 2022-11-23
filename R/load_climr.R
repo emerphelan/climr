@@ -1,3 +1,25 @@
+#' Load in climate data from NASA
+#'
+#' Loads in global or hemispheric data from NASA at different intervals.
+#'
+#' @param type Either \code{"GLB"}, \code{"NH"}, or \code{"SH"} for global, northern,
+#' or southern hemisphere temperature anomalies respectively. Defaults to \code{"GLB"}.
+#'
+#' @return An object of class \code{"climr"} which is a list of \code{\link[tibble]{tibble}}s which
+#' contain the yearly, quarterly, and monthly values for each time series respectively.
+#'
+#' @note A dedicated \code{\link{fit}} function is provided for objects of class \code{"climr"}.
+#'
+#' @export
+#' @author Keefe Murphy - <\email{keefe.murphy@@mu.ie}>
+#'
+#' @importFrom dplyr "mutate" "select" "arrange"
+#' @importFrom tidyr "pivot_longer"
+#' @importFrom readr "parse_factor" "read_csv"
+#'
+#' @seealso \code{\link{fit}}, \code{\link{plot.climr_fit}}
+#' @examples
+#' dat <- load_climr(type = "SH")
 load_climr <- function(type = c("GLB", "NH", "SH")) {
 
   ## match.arg() is a useful debugging function:

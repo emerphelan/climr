@@ -1,3 +1,24 @@
+#' Plot climr output
+#'
+#' Loads in global or hemispheric data from NASA at different intervals.
+#'
+#' @param x An object of class \code{"climr_fit"} outputted from the \code{link{fit}} function.
+#' @param time_grid An optional time grid over which to produce fitted values of the model.
+#' @param ... Catches unused arguments to \code{plot} (not currently implemented).
+#'
+#' @return Nothing, just a nice ggplot.
+#'
+#' @export
+#' @author Keefe Murphy - <\email{keefe.murphy@@mu.ie}>
+#' @seealso \code{\link{fit}}, \code{\link{load_climr}}
+#' @examples
+#' dat <- load_climr(type = "SH")
+#' mod1 <- fit(dat)
+#' mod2 <- fit(dat, data_type="monthly", fit_type="smooth.spline")
+#' mod3 <- fit(dat, data_type="quarterly", fit_type="loess")
+#' plot(mod1)
+#' plot(mod2)
+#' plot(mod3)
 plot.climr_fit <- function(x, time_grid = pretty(x$data$x, n=100), ...) {
 
   ## Create a nice plot from the output of fit.climr()
