@@ -2,7 +2,7 @@ Package: climr
 Type: Package
 Title: Analyse and plot the latest global and hemispheric climate data
 Version: 0.1.0
-Authors@: person("Keefe", "Murphy", email="keefe.murphy@mu.ie", role=c("aut", "cre"))
+Authors@R: person("Keefe", "Murphy", email="keefe.murphy@mu.ie", role=c("aut", "cre"))
 Description: Downloads the latest climate data from NASA at monthly, quarterly, and yearly intervals. 
     Performs basic modelling of said data and creates nice plots of temperature anomalies over time.
 License: GPL>=2
@@ -15,5 +15,6 @@ Imports: dplyr,
   magrittr,
   ggplot2,
   tibble,
+  tidyr,
   viridis
 RoxygenNote: 7.2.2
